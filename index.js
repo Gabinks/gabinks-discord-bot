@@ -49,7 +49,9 @@ Client.on("message", msg => {
         if(mention == undefined){
             msg.author.send("Pour report un joueur veuillez préciser le nom du joueur et la raison Exemple : !/report @Gabinks Insule");
         }else{
-            let args = msg.content.split(' ').splice(2).join(' ');
+            var array = msg.content.split(' ');
+            array.shift();
+            let args = array.join(' ');
 
             channel = Client.channels.cache.get('866009504054509578');
 
