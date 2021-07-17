@@ -92,7 +92,7 @@ Client.on("message", msg => {
 });
 
 //Custom Status
-client.on("ready", () =>[
+Client.on("ready", () =>[
     function Status(){
         let status = ["discord.io/commufrrl"]
 
