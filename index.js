@@ -50,11 +50,11 @@ Client.on("message", msg => {
             msg.author.send("Pour report un joueur veuillez préciser le nom du joueur et la raison Exemple : !/report @Gabinks Insule");
         }else{
             const args = msg.content.split(" ");
-            const messageContent = msg.content.slice(args[1].length);
+            const messageContent = msg.content.slice(args[0].length + 1);
 
             channel = Client.channels.cache.get('866009504054509578');
 
-            channel.send("<@" + msg.author.id + "> a **report** <@" + mention.id + "> pour " + "__"+args[2]+"__");
+            channel.send("<@" + msg.author.id + "> a **report** <@" + mention.id + "> pour " + "__"+messageContent+"__");
         }
     }
 
