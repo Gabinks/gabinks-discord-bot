@@ -92,11 +92,13 @@ Client.on("message", msg => {
 });
 
 //Custom Status
-Client.on("ready"), () => {
-    Client.user.setActivity({
+Client.user.setPresence({
+    status: "online",
+    activity: {
+        name: "with depression",
         type: "STREAMING",
         url: "https://www.twitch.tv/gabinbinks"
-    });
-}
+    }
+});
 
 Client.login(process.env.TOKEN);
