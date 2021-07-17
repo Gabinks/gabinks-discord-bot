@@ -54,7 +54,7 @@ Client.on("message", msg => {
         .setThumbnail('https://i.imgur.com/ErIMkfx.png')
         .addFields(
             { name: '\u200B', value: '\u200B' },
-            { name: 'Pour ban un membre :', value: '!/report **@Gabinks** __Insulte__' },
+            { name: 'Pour report un membre :', value: '!/report **@Gabinks** __Insulte__' },
             { name: '\u200B', value: '\u200B' },
         )
         .setTimestamp()
