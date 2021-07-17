@@ -57,7 +57,18 @@ Client.on("message", msg => {
             }
             else{
                 mention.roles.add("865960236841041940");
-                msg.reply(mention.displayName + " mute avec succès.")
+                msg.channel.send(mention.displayName + " mute avec succès.")
+            }
+        }
+        else if(msg.content.startsWith(prefix + "unmute")){
+            let mention = msg.mentions.members.first();
+
+            if(mention == undefined){
+                msg.reply("Membre non ou mal mentionné")
+            }
+            else{
+                mention.roles.remove("865960236841041940");
+                msg.channel.send(mention.displayName + " unmute avec succès.")
             }
         }
     }
