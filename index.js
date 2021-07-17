@@ -21,7 +21,8 @@ Client.on("message", msg => {
     if(msg.channel.type == "dm") return;
 
     if(msg.content.startsWith(prefix + "help")){
-        const helpEmbed = new Discord.MessageEmbed()
+        if(msg.member.hasPermission("ADMINISTRATOR")){
+            const helpEmbed = new Discord.MessageEmbed()
         .setColor('#5366AD')
         .setTitle('Les commandes du bot')
         .setDescription('Pour chaque commande un exemple sera montré, vous aurez juste a changer les valeurs !')
@@ -41,6 +42,8 @@ Client.on("message", msg => {
         .setTimestamp()
 	    .setFooter('Communauté Française RL', 'https://i.imgur.com/ErIMkfx.png');
     msg.reply(helpEmbed);
+        }
+        
     }
 
     if(msg.content.startsWith(prefix + "report")){
