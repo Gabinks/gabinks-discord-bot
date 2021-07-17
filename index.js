@@ -46,8 +46,8 @@ Client.on("message", msg => {
     if(msg.content.startsWith(prefix + "report")){
         let mention = msg.mentions.members.first();
 
-        if(mention == undefined){
-            msg.author.send("Pour report un joueur veuillez préciser le nom du joueur et la raison", "Exemple : !/report @Gabinks Insule");
+        if(mention == undefined || args[2] == undefined){
+            msg.author.send("Pour report un joueur veuillez préciser le nom du joueur et la raison Exemple : !/report @Gabinks Insule");
         }else{
             let args = msg.content.split(" ");
 
