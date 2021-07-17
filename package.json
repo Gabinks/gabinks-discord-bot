@@ -8,7 +8,6 @@
   },
   "devDependencies": {},
   "scripts": {
-    "worker": "node index.js",
     "start": "node index.js"
   },
   "author": "GabinBinks",
