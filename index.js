@@ -20,7 +20,19 @@ Client.on("message", msg => {
     if(msg.author.bot) return;
     if(msg.channel.type == "dm") return;
 
-    if(msg.content.startsWith(prefix + "ping")){
+    const helpEmbed = new Discord.MessageEmbed()
+        .setColor('#5366AD')
+        .setTitle('Les commandes du bot')
+        .setAuthor('Communauté Française RL', 'https://imgur.com/ErIMkfx')
+        .addField(
+            { name: 'Pour ban un membre :', value: '!/ban @nomdumembre'},
+            { name: 'Pour kick un membre :', value: '!/kick @nomdumembre'},
+            { name: 'Pour mute un membre :', value: '!/mute @nomdumembre'},
+            { name: 'Pour temp mute un membre :', value: '!/tempmute @nomdumembre nombredesecondes'}
+        )
+    channel.send(helpEmbed);
+
+    if(msg.content.startsWith(prefix + "help")){
         msg.reply("pong");
     }
 
