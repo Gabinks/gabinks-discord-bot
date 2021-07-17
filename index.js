@@ -58,7 +58,7 @@ Client.on("message", msg => {
             channel = Client.channels.cache.get('866009504054509578');
 
             channel.send("<@" + msg.author.id + "> a **report** <@" + mention.id + "> pour " + "__"+args+"__");
-        }
+        
     }
 
     if(msg.member.hasPermission("ADMINISTRATOR")){
