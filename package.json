@@ -1,0 +1,15 @@
+{
+  "name": "commurlfr",
+  "version": "1.0.0",
+  "description": "Bot de la Communauté Française RL",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "GabinBinks",
+  "license": "ISC"
+}
