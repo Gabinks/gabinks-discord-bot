@@ -45,22 +45,6 @@ Client.on("message", msg => {
         }
         
     }
-    if(msg.content.startsWith(prefix + "help")){
-        const helpEmbed = new Discord.MessageEmbed()
-    .setColor('#5366AD')
-        .setTitle('Les commandes du bot')
-        .setDescription('Pour chaque commande un exemple sera montré, vous aurez juste a changer les valeurs !')
-        .setAuthor('Communauté Française RL', 'https://i.imgur.com/ErIMkfx.png')
-        .setThumbnail('https://i.imgur.com/ErIMkfx.png')
-        .addFields(
-            { name: '\u200B', value: '\u200B' },
-            { name: 'Pour report un membre :', value: '!/report **@Gabinks** __Insulte__' },
-            { name: '\u200B', value: '\u200B' },
-        )
-        .setTimestamp()
-	    .setFooter('Communauté Française RL', 'https://i.imgur.com/ErIMkfx.png');
-    msg.reply(helpEmbed);
-    }
 
     if(msg.content.startsWith(prefix + "report")){
         let mention = msg.mentions.members.first();
