@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 
 const Client = new Discord.Client;
 
-const prefix = "µ";
+const prefix = "!/";
 
 Client.on("ready", () => {
     console.log("bot opérationnel");
