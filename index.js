@@ -31,7 +31,7 @@ Client.on("message", msg => {
             { name: 'Pour mute un membre :', value: '!/mute @nomdumembre'},
             { name: 'Pour temp mute un membre :', value: '!/tempmute @nomdumembre nombredesecondes'}
         )
-    channel.send(helpEmbed);
+    msg.reply(helpEmbed);
     }
 
     if(msg.member.hasPermission("ADMINISTRATOR")){
