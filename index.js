@@ -33,6 +33,22 @@ Client.on("message", msg => {
                 }
             }
         }
+        else if(msg.content.startsWith(prefix + "kick")){
+            let mention = msg.mentions.members.first();
+
+            if(mention == undefined){
+                msg.reply("Membre non ou mal mentionné.");
+            }
+            else{
+                if(mention.kickable){
+                    mention.kick();
+                    msg.channel.send(mention.displayName + " a été kick avec succès");
+                }
+                else{
+                    msg.reply("Impossible de kick ce membre.")
+                }
+            }
+        }
     }
     
 });
