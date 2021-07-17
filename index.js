@@ -89,7 +89,15 @@ Client.on("message", msg => {
             }
         }
     }
-    
 });
+
+//Custom Status
+client.on("ready", () =>[
+    function Status(){
+        let status = ["discord.io/commufrrl"]
+
+        Client.user.setActivity(status[status], {type: "STREAMING", url: "https://twitch.tv/"});
+    }
+])
 
 Client.login(process.env.TOKEN);
