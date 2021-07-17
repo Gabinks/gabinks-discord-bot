@@ -48,18 +48,17 @@ Client.on("message", msg => {
 
         if(mention == undefined){
             msg.author.send("Pour report un joueur veuillez préciser le nom du joueur et la raison Exemple : !/report @Gabinks Insule");
-            }
-        }else{
-            let args = msg.content.split(' ').splice(2).join(' ');
-            if(args == undefined){
-                msg.author.send("Pour report un joueur veuillez préciser le nom du joueur et la raison Exemple : !/report @Gabinks Insule");
             }else{
-                channel = Client.channels.cache.get('866009504054509578');
-                channel.send("<@" + msg.author.id + "> a **report** <@" + mention.id + "> pour " + "__"+args+"__");
+                let args = msg.content.split(' ').splice(2).join(' ');
+                if(args == undefined){
+                    msg.author.send("Pour report un joueur veuillez préciser le nom du joueur et la raison Exemple : !/report @Gabinks Insule");
+                }else{
+                    channel = Client.channels.cache.get('866009504054509578');
+                    channel.send("<@" + msg.author.id + "> a **report** <@" + mention.id + "> pour " + "__"+args+"__");
+                }
             }
-        
-    }
-
+            
+        }
     if(msg.member.hasPermission("ADMINISTRATOR")){
         if(msg.content.startsWith(prefix + "ban")){
             let mention = msg.mentions.members.first();
