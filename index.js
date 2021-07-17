@@ -81,7 +81,7 @@ Client.on("message", msg => {
                 let args = msg.content.split(" ");
 
                 mention.roles.add("865960236841041940");
-                msg.channel.send(mention.displayName + " a été mute pendant " + args[2] + " avec succès !");
+                msg.channel.send(mention.displayName + " a été mute pendant " + args[2] + " secondes avec succès !");
                 setTimeout(function(){
                     mention.roles.remove("865960236841041940");
                     msg.channel.send("<@" + mention.id + "> a été unmute!");
