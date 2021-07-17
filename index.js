@@ -22,7 +22,7 @@ Client.on("message", msg => {
 
     if(msg.content.startsWith(prefix + "helpadmin")){
         if(msg.member.hasPermission("ADMINISTRATOR")){
-            const helpEmbed = new Discord.MessageEmbed()
+            const helpadminEmbed = new Discord.MessageEmbed()
         .setColor('#5366AD')
         .setTitle('Les commandes du bot')
         .setDescription('Pour chaque commande un exemple sera montré, vous aurez juste a changer les valeurs !')
@@ -41,7 +41,7 @@ Client.on("message", msg => {
         )
         .setTimestamp()
 	    .setFooter('Communauté Française RL', 'https://i.imgur.com/ErIMkfx.png');
-    msg.reply(helpEmbed);
+    msg.reply(helpadminEmbed);
         }
         
     }
