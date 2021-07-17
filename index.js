@@ -81,10 +81,10 @@ Client.on("message", msg => {
                 let args = msg.content.split(" ");
 
                 mention.roles.add("865960236841041940");
-                msg.author.send("Tu as été mute pendant " + args[2] + " secondes par un modérateur du serveur!");
+                msg.channel.send(mention.displayName + " a été mute pendant " + args[2] + " avec succès !");
                 setTimeout(function(){
                     mention.roles.remove("865960236841041940");
-                    msg.author.send("<@" + mention.id + "> tu peux de nouveau parler!");
+                    msg.channel.send("<@" + mention.id + "> a été unmute!");
                 }, args[2] * 1000);
             }
         }
