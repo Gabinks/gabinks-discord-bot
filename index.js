@@ -25,8 +25,11 @@ Client.on("message", msg => {
         .setColor('#5366AD')
         .setTitle('Les commandes du bot')
         .setAuthor('Communauté Française RL', 'https://imgur.com/ErIMkfx')
-        .addField(
-            { name: 'Pour ban un membre :', value: '!/ban @nomdumembre'},
+        .addFields(
+            { name: 'Pour ban un membre :', value: '!/ban @nomdumembre', inline: true },
+            { name: 'Pour kick un membre :', value: '!/kick @nomdumembre', inline: true },
+            { name: 'Pour mute un membre :', value: '!/mute @nomdumembre', inline: true },
+            { name: 'Pour temp mute un membre :', value: '!/tempmute @nomdumembre nombredesecondes', inline: true },
         )
     msg.reply(helpEmbed);
     }
