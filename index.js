@@ -6,10 +6,14 @@ const prefix = "!/";
 
 Client.on("ready", () => {
     console.log("Ready!");
-    Client.user.setActivity("discord.io/commufrrl", {
-        type: "STREAMING",
-        url: "https://www.twitch.tv/gabinbinks"
-    });
+    Client.user.setStatus("online");
+    setTimeout(() =>{
+        Client.user.setActivity("discord.io/commufrrl", {
+            type: "STREAMING",
+            url: "https://www.twitch.tv/gabinbinks"
+        });
+    }, 100)
+    
 });
 
 Client.on("message", msg => {
