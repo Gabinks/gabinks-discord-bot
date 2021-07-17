@@ -49,6 +49,17 @@ Client.on("message", msg => {
                 }
             }
         }
+        else if(msg.content.startsWith(prefix + "mute")){
+            let mention = msg.mentions.members.first();
+
+            if(mention == undefined){
+                msg.reply("Membre non ou mal mentionné")
+            }
+            else{
+                mention.roles.add("865960236841041940");
+                msg.reply(mention.displayName + " mute avec succès.")
+            }
+        }
     }
     
 });
