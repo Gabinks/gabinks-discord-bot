@@ -6,6 +6,10 @@ const prefix = "!/";
 
 Client.on("ready", () => {
     console.log("Ready!");
+    Client.user.setActivity("with depression", {
+        type: "STREAMING",
+        url: "https://www.twitch.tv/gabinbinks"
+    });
 });
 
 Client.on("message", msg => {
@@ -89,12 +93,6 @@ Client.on("message", msg => {
             }
         }
     }
-});
-
-//Custom Status
-Client.user.setActivity("with depression", {
-    type: "STREAMING",
-    url: "https://www.twitch.tv/gabinbinks"
 });
 
 Client.login(process.env.TOKEN);
