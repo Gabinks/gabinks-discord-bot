@@ -11,12 +11,21 @@ Client.on("ready", () => {
 Client.on("message", msg => {
     if(msg.author.bot) return;
 
-    if(msg.content == prefix + "ping"){
-        msg.channel.send("pong");
-    }
+    if(msg.member.hasPermission("ADMINISTRATOR")){
+        if(msg.content.startsWith(prefix + "ban")){
+            let mention = msg.mentions.members.first();
 
-    if(msg.content == prefix + "stat"){
-        msg.channel.send(msg.author.username + " qui a pour identifiant : " + msg.author.id + " a posté un message");
+            if(mention == undefined){
+                msg.reply("Membre non ou mal mentionné.");
+            }else{
+                if(mention.bannable){
+                    mention.ban();
+                    msg.channel.send(mention.displayName + " a été banni avec succès");
+                }else{
+                    msg.reply("Impossible de bannir ce membre!")
+                }
+            }
+        }
     }
     
 });
