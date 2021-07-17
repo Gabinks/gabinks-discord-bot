@@ -12,6 +12,10 @@ Client.on("message", msg => {
     if(msg.author.bot) return;
     if(msg.channel.type == "dm") return;
 
+    if(msg.content.startsWith(prefix + "ping")){
+        msg.reply("pong");
+    }
+
     if(msg.member.hasPermission("ADMINISTRATOR")){
         if(msg.content.startsWith(prefix + "ban")){
             let mention = msg.mentions.members.first();
