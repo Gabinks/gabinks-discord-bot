@@ -24,7 +24,8 @@ Client.on("message", msg => {
         const helpEmbed = new Discord.MessageEmbed()
         .setColor('#5366AD')
         .setTitle('Les commandes du bot')
-        .setAuthor('Communauté Française RL', 'https://imgur.com/ErIMkfx')
+        .setAuthor('Communauté Française RL', 'https://i.imgur.com/ErIMkfx.png')
+        .setThumbnail('https://i.imgur.com/ErIMkfx.png')
         .addFields(
             { name: 'Pour ban un membre :', value: '!/ban **@nomdumembre**' },
             { name: '\u200B', value: '\u200B' },
@@ -34,6 +35,8 @@ Client.on("message", msg => {
             { name: '\u200B', value: '\u200B' },
             { name: 'Pour temp mute un membre :', value: '!/tempmute **@nomdumembre** __nombredesecondes__' },
         )
+        .setTimestamp()
+	    .setFooter('Communauté Française RL', 'https://i.imgur.com/ErIMkfx.png');
     msg.reply(helpEmbed);
     }
 
