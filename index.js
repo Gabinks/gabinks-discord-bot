@@ -99,6 +99,6 @@ Client.user.setPresence({
         type: "STREAMING",
         url: "https://www.twitch.tv/gabinbinks"
     }
-});
+})
 
 Client.login(process.env.TOKEN);
