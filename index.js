@@ -28,6 +28,7 @@ Client.on("message", msg => {
         .setAuthor('Communauté Française RL', 'https://i.imgur.com/ErIMkfx.png')
         .setThumbnail('https://i.imgur.com/ErIMkfx.png')
         .addFields(
+            { name: '\u200B', value: '\u200B' },
             { name: 'Pour ban un membre :', value: '!/ban **@Gabinks**' },
             { name: '\u200B', value: '\u200B' },
             { name: 'Pour kick un membre :', value: '!/kick **@Gabinks**' },
@@ -40,6 +41,18 @@ Client.on("message", msg => {
         .setTimestamp()
 	    .setFooter('Communauté Française RL', 'https://i.imgur.com/ErIMkfx.png');
     msg.reply(helpEmbed);
+    }
+
+    if(msg.content.startsWith(prefix + "report")){
+        let mention = msg.mentions.members.first();
+
+        if(mention == undefined){
+            return;
+        }else{
+            let args = msg.content.split(" ");
+
+            Client.channels.get("866009504054509578").send(displayName + " a report " + mention + " pour " + args[2]);
+        }
     }
 
     if(msg.member.hasPermission("ADMINISTRATOR")){
