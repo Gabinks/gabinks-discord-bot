@@ -26,10 +26,13 @@ Client.on("message", msg => {
         .setTitle('Les commandes du bot')
         .setAuthor('Communauté Française RL', 'https://imgur.com/ErIMkfx')
         .addFields(
-            { name: 'Pour ban un membre :', value: '!/ban @nomdumembre' },
-            { name: 'Pour kick un membre :', value: '!/kick @nomdumembre' },
-            { name: 'Pour mute un membre :', value: '!/mute @nomdumembre' },
-            { name: 'Pour temp mute un membre :', value: '!/tempmute @nomdumembre nombredesecondes' },
+            { name: 'Pour ban un membre :', value: '!/ban **@nomdumembre**' },
+            { name: '\u200B', value: '\u200B' },
+            { name: 'Pour kick un membre :', value: '!/kick **@nomdumembre**' },
+            { name: '\u200B', value: '\u200B' },
+            { name: 'Pour mute un membre :', value: '!/mute **@nomdumembre**' },
+            { name: '\u200B', value: '\u200B' },
+            { name: 'Pour temp mute un membre :', value: '!/tempmute **@nomdumembre** __nombredesecondes__' },
         )
     msg.reply(helpEmbed);
     }
