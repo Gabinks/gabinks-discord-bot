@@ -5,7 +5,7 @@ const Client = new Discord.Client;
 const prefix = "!/";
 
 Client.on("ready", () => {
-    console.log("bot opérationnel");
+    console.log("Ready!");
 });
 
 Client.on("message", msg => {
@@ -92,13 +92,9 @@ Client.on("message", msg => {
 });
 
 //Custom Status
-Client.user.setPresence({
-    status: "online",
-    activity: {
-        name: "with depression",
-        type: "STREAMING",
-        url: "https://www.twitch.tv/gabinbinks"
-    }
-})
+Client.user.setActivity("with depression", {
+    type: "STREAMING",
+    url: "https://www.twitch.tv/gabinbinks"
+});
 
 Client.login(process.env.TOKEN);
