@@ -24,16 +24,18 @@ Client.on("message", msg => {
         const helpEmbed = new Discord.MessageEmbed()
         .setColor('#5366AD')
         .setTitle('Les commandes du bot')
+        .setDescription('Pour chaque commande un exemple sera montré, vous aurez juste a changer les valeurs !')
         .setAuthor('Communauté Française RL', 'https://i.imgur.com/ErIMkfx.png')
         .setThumbnail('https://i.imgur.com/ErIMkfx.png')
         .addFields(
-            { name: 'Pour ban un membre :', value: '!/ban **@nomdumembre**' },
+            { name: 'Pour ban un membre :', value: '!/ban **@Gabinks**' },
             { name: '\u200B', value: '\u200B' },
-            { name: 'Pour kick un membre :', value: '!/kick **@nomdumembre**' },
+            { name: 'Pour kick un membre :', value: '!/kick **@Gabinks**' },
             { name: '\u200B', value: '\u200B' },
-            { name: 'Pour mute un membre :', value: '!/mute **@nomdumembre**' },
+            { name: 'Pour mute un membre :', value: '!/mute **@Gabinks**' },
             { name: '\u200B', value: '\u200B' },
-            { name: 'Pour temp mute un membre :', value: '!/tempmute **@nomdumembre** __nombredesecondes__' },
+            { name: 'Pour temp mute un membre (**en secondes!**) :', value: '!/tempmute **@Gabinks** __5__' },
+            { name: '\u200B', value: '\u200B' },
         )
         .setTimestamp()
 	    .setFooter('Communauté Française RL', 'https://i.imgur.com/ErIMkfx.png');
