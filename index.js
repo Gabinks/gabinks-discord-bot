@@ -53,7 +53,7 @@ Client.on("message", msg => {
 
             channel = Client.channels.cache.get('866009504054509578');
 
-            channel.send(msg.author.displayName + " a report " + mention.displayName + " pour " + args[2]);
+            channel.send("<@" + msg.author.id + "> a report <@" + mention.id + "> pour " + args[2]);
         }
     }
 
