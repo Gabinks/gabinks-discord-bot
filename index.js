@@ -64,11 +64,11 @@ Client.on("message", msg => {
             let mention = msg.mentions.members.first();
 
             if(mention == undefined){
-                msg.reply("Membre non ou mal mentionné")
+                msg.reply("Membre non ou mal mentionné");
             }
             else{
                 mention.roles.remove("865960236841041940");
-                msg.channel.send(mention.displayName + " unmute avec succès.")
+                msg.channel.send(mention.displayName + " unmute avec succès.");
             }
         }
     }
