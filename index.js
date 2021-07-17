@@ -71,6 +71,22 @@ Client.on("message", msg => {
                 msg.channel.send(mention.displayName + " unmute avec succès.");
             }
         }
+        else if(msg.content.startsWith(prefix + "tempmute")){
+            let mention = msg.mentions.members.first();
+
+            if(mention == undefined){
+                msg.reply("Membre non ou mal mentionné");
+            }
+            else{
+                let args = msg.content.split(" ");
+
+                mention.roles.add("865960236841041940");
+                setTimeout(function(){
+                    mention.roles.remove("865960236841041940");
+                    msg.channel.send("<@" + mention.id + "> tu peux de nouveau parler!");
+                }, args[2] * 1000);
+            }
+        }
     }
     
 });
