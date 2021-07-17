@@ -92,12 +92,11 @@ Client.on("message", msg => {
 });
 
 //Custom Status
-Client.on("ready", () =>[
-    function Status(){
-        let status = ["discord.io/commufrrl"]
-
-        Client.user.setActivity(status[status], {type: "STREAMING", url: "https://twitch.tv/"});
-    }
-])
+Client.on("ready"), () => {
+    Client.user.setActivity({
+        type: "STREAMING",
+        url: "https://www.twitch.tv/gabinbinks"
+    });
+}
 
 Client.login(process.env.TOKEN);
