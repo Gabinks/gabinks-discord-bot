@@ -47,7 +47,7 @@ Client.on("message", msg => {
         let mention = msg.mentions.members.first();
 
         if(mention == undefined){
-            return;
+            msg.author.send("Pour report un joueur veuillez préciser le nom du joueur et la raison", "Exemple : !/report @Gabinks Insule");
         }else{
             let args = msg.content.split(" ");
 
