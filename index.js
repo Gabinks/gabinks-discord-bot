@@ -10,6 +10,7 @@ Client.on("ready", () => {
 
 Client.on("message", msg => {
     if(msg.author.bot) return;
+    if(msg.channel.type == "dm") return;
 
     if(msg.member.hasPermission("ADMINISTRATOR")){
         if(msg.content.startsWith(prefix + "ban")){
@@ -17,12 +18,14 @@ Client.on("message", msg => {
 
             if(mention == undefined){
                 msg.reply("Membre non ou mal mentionné.");
-            }else{
+            }
+            else {
                 if(mention.bannable){
                     mention.ban();
                     msg.channel.send(mention.displayName + " a été banni avec succès");
-                }else{
-                    msg.reply("Impossible de bannir ce membre!")
+                }
+                else {
+                    msg.reply("Impossible de bannir ce membre!");
                 }
             }
         }
