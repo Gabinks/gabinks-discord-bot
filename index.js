@@ -51,7 +51,9 @@ Client.on("message", msg => {
         }else{
             let args = msg.content.split(" ");
 
-            Client.channels.get("866009504054509578").send(displayName + " a report " + mention + " pour " + args[2]);
+            channel = Client.channels.cache.get('866009504054509578');
+
+            channel.send(displayName + " a report " + mention + " pour " + args[2]);
         }
     }
 
