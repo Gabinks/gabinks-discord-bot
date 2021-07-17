@@ -20,7 +20,8 @@ Client.on("message", msg => {
     if(msg.author.bot) return;
     if(msg.channel.type == "dm") return;
 
-    const helpEmbed = new Discord.MessageEmbed()
+    if(msg.content.startsWith(prefix + "help")){
+        const helpEmbed = new Discord.MessageEmbed()
         .setColor('#5366AD')
         .setTitle('Les commandes du bot')
         .setAuthor('Communauté Française RL', 'https://imgur.com/ErIMkfx')
@@ -31,9 +32,6 @@ Client.on("message", msg => {
             { name: 'Pour temp mute un membre :', value: '!/tempmute @nomdumembre nombredesecondes'}
         )
     channel.send(helpEmbed);
-
-    if(msg.content.startsWith(prefix + "help")){
-        msg.reply("pong");
     }
 
     if(msg.member.hasPermission("ADMINISTRATOR")){
