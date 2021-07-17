@@ -6,7 +6,7 @@ const prefix = "!/";
 
 Client.on("ready", () => {
     console.log("Ready!");
-    Client.user.setActivity("with depression", {
+    Client.user.setActivity("discord.io/commufrrl", {
         type: "STREAMING",
         url: "https://www.twitch.tv/gabinbinks"
     });
