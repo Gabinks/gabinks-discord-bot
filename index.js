@@ -50,7 +50,7 @@ Client.on("message", msg => {
         let mention = msg.mentions.members.first();
     
         if (!mention == undefined || !args == undefined){
-            return msg.author.send("Pour report un joueur veuillez préciser le nom du joueur et la raison Exemple : !/report @Gabinks Insule");
+            msg.author.send("Pour report un joueur veuillez préciser le nom du joueur et la raison Exemple : !/report @Gabinks Insule");
         }
         let args = msg.content.split(' ').splice(2).join(' ');
         channel = Client.channels.cache.get('866009504054509578');
