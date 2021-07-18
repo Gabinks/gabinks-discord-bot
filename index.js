@@ -145,7 +145,7 @@ Client.on("message", msg => {
 
             msg.delete().then(msg => {
                 msg.channel.bulkDelete(nbr, true).then(messages => {
-                    msg.channel.send(":wastebasket:" + msg.author + ", Vous avez supprimé " + messages.size + " message(s).");
+                    msg.channel.send(":wastebasket: <@" + msg.author + ">, Vous avez supprimé " + messages.size + " message(s).");
                 })
             })
         };
