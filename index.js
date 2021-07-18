@@ -132,6 +132,23 @@ Client.on("message", msg => {
                 }, args[2] * 1000);
             }
         }
+        //Clear command
+        else if (msg.content.startsWith(prefix + "clear")){
+            let args = msg.content.split(" ");
+            let nbr = args[1];
+
+            if (!msg.member.hasPermission("MANAGE_MESSAGES")) return msg.channel.send("Vous n'avez pas la permission requise");
+            if (!msg.bot.hasPermission("MANAGE_MESSAGES")) return msg.channel.send("Je n'ai pas la permission requise!");
+            if (!nbr) return msg.channel.send("Veuillez indiquer le nombre de message à supprimer.");
+            if (isNaN(nbr)) return msg.channel.send("Veuillez indiquer le nombre de message à supprimer.");
+            if (nbr < 1 || nbr > 100) return msg.channel.send("Vous devez indiquer un nombre entre 1 et 100.")
+
+            msg.delete().then(msg => {
+                msg.channel.bulkDelete(nbr, true).then(messages => {
+                    msg.channel.send(":wastebasket:" + msg.author + ", Vous avez supprimé " + messages.size + " message(s).");
+                })
+            })
+        };
     }
 });
 
