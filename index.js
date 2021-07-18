@@ -138,7 +138,7 @@ Client.on("message", msg => {
             let nbr = args[1];
 
             if (!msg.member.hasPermission("MANAGE_MESSAGES")) return msg.channel.send("Vous n'avez pas la permission requise");
-            if (!msg.guild.hasPermission("MANAGE_MESSAGES")) return msg.channel.send("Je n'ai pas la permission requise!");
+            if (!msg.guild.me.hasPermission("MANAGE_MESSAGES")) return msg.channel.send("Je n'ai pas la permission requise!");
             if (!nbr) return msg.channel.send("Veuillez indiquer le nombre de message à supprimer.");
             if (isNaN(nbr)) return msg.channel.send("Veuillez indiquer le nombre de message à supprimer.");
             if (nbr < 1 || nbr > 100) return msg.channel.send("Vous devez indiquer un nombre entre 1 et 100.")
